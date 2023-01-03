@@ -23,7 +23,8 @@ Users should be able to:
 
 ### Video
 
-![](./20230103_142343.mp4)
+https://user-images.githubusercontent.com/67608414/210359312-2e6700c4-2f3b-4915-b05e-786520821412.mp4
+
 
 ### Links
 
