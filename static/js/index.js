@@ -107,23 +107,6 @@ uploadConfirm.addEventListener('click', function (e) {
 
       // Canvas rendering Xbar
 
-      const options = {
-        plugins: {
-          autocolors: false,
-          annotation: {
-            annotations: {
-              line1: {
-                type: 'line',
-                yMin: lowerControlLimitXbar,
-                yMax: upperControlLimitXbar,
-                borderColor: 'rgb(255, 99, 132)',
-                borderWidth: 2,
-              },
-            },
-          },
-        },
-      };
-
       const dataXbar = {
         labels: XbarRangeChartLabels,
         datasets: [
@@ -140,7 +123,6 @@ uploadConfirm.addEventListener('click', function (e) {
       const configXbar = {
         type: 'line',
         data: dataXbar,
-        options,
       };
 
       const xbarChartCanvas = new Chart(xbarChart, configXbar);
