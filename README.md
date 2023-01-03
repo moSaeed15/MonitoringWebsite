@@ -23,8 +23,7 @@ Users should be able to:
 
 ### Video
 
-https://user-images.githubusercontent.com/67608414/210359312-2e6700c4-2f3b-4915-b05e-786520821412.mp4
-
+https://user-images.githubusercontent.com/67608414/210360772-b41ac249-5d9d-46a1-8083-2ef73ae824c4.mp4
 
 ### Links
 
