@@ -10,7 +10,7 @@
 - [Author](#author)
 
 ## Some comments
-
+The alert is very simple due to the project requirments but could have been done cleaner with a popup 
 The ardunio graph will plot only ones for testing purposes and because some circuit needs to be connected for it to show sensor data.
 
 ### The challenge
