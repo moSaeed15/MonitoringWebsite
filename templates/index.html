@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.js"
+      integrity="sha512-aMGMvNYu8Ue4G+fHa359jcPb1u+ytAF+P2SCb+PxrjCdO3n3ZTxJ30zuH39rimUggmTwmh2u7wvQsDTHESnmfQ=="
+      crossorigin="anonymous"
+    ></script>
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='styles/styles.css')}}"
+    />
+  </head>
+
+  <body>
+    <nav class="nav">
+      <div class="nav--logo">
+        <i class="fa-solid fa-chart-line fa-5x"></i>
+      </div>
+      <h2 class="nav--title">Signal Monitoring</h2>
+    </nav>
+    <section class="signal__section">
+      <h1>ECG Signal :</h1>
+      <input type="file" name="" id="uploadfile1" accept="" .csv />
+      <button id="uploadconfirm1">Upload File</button>
+      <div class="content__box--1">
+        <div class="plot__box--1">
+          <canvas id="signal--1"></canvas>
+        </div>
+        <div class="attributes__box--1">
+          <div class="attribute">
+            <h4 class="attribute--title">Duration:</h4>
+            <span class="attribute--value">{{FirstSignalArray[0]}}</span>
+          </div>
+          <div class="attribute">
+            <h4 class="attribute--title">Frequency:</h4>
+            <span class="attribute--value">{{FirstSignalArray[1]}}</span>
+          </div>
+          <div class="attribute">
+            <h4 class="attribute--title">Amplitude:</h4>
+            <span class="attribute--value">{{FirstSignalArray[2]}}</span>
+          </div>
+          <div class="attribute">
+            <h4 class="attribute--title">Magnitude:</h4>
+            <span class="attribute--value">{{FirstSignalArray[3]}}</span>
+          </div>
+          <div class="attribute">
+            <h4 class="attribute--title">Phase:</h4>
+            <span class="attribute--value">{{FirstSignalArray[4]}}</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2 -->
+
+    <section class="signal__section">
+      <h1>Pulse Oximetery signal :</h1>
+      <input type="file" name="" id="uploadfile2" accept="" .csv />
+      <button id="uploadconfirm2">Upload File</button>
+      <div class="content__box--1">
+        <div class="plot__box--1">
+          <canvas id="signal--2"></canvas>
+        </div>
+        <div class="attributes__box--2">
+          <div class="attribute">
+            <h4 class="attribute--title">Duration:</h4>
+            <span class="attribute--value">{{SecondSignalArray[0]}}</span>
+          </div>
+          <div class="attribute">
+            <h4 class="attribute--title">Frequency:</h4>
+            <span class="attribute--value">{{SecondSignalArray[1]}}</span>
+          </div>
+          <div class="attribute">
+            <h4 class="attribute--title">Amplitude:</h4>
+            <span class="attribute--value">{{SecondSignalArray[2]}}</span>
+          </div>
+          <div class="attribute">
+            <h4 class="attribute--title">Magnitude:</h4>
+            <span class="attribute--value">{{SecondSignalArray[3]}}</span>
+          </div>
+          <div class="attribute">
+            <h4 class="attribute--title">Phase:</h4>
+            <span class="attribute--value">{{SecondSignalArray[4]}}</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="realtime__signal">
+      <h1 class="realtime--title">Real Time Signal :</h1>
+      <div class="canvas__box">
+        <canvas id="arduniosignal"></canvas>
+      </div>
+    </section>
+    <section class="ControlSection">
+      <h1 class="realtime--title">Xbar Chart :</h1>
+      <div class="xbarplot__box">
+        <canvas id="Xbar"></canvas>
+      </div>
+    </section>
+    <section class="ControlSection">
+      <h1 class="realtime--title">Range Chart :</h1>
+      <div class="xbarplot__box">
+        <canvas id="rangeChart"></canvas>
+      </div>
+    </section>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"
+      integrity="sha512-SGWgwwRA8xZgEoKiex3UubkSkV1zSE1BS6O4pXcaxcNtUlQsOmOmhVnDwIvqGRfEmuz83tIGL13cXMZn6upPyg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/2.1.0/chartjs-plugin-annotation.min.js"
+      integrity="sha512-1uGDhRiDlpOPrTi54rJHu3oBLizqaadZDDft+j4fVeFih6eQBeRPJuuP3JcxIqJxIjzOmRq57XwwO4FT+/owIg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script
+      type="text/javascript"
+      src="{{url_for('static',filename='js/index.js')}}"
+    ></script>
+  </body>
+</html>
