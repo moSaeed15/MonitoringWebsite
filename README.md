@@ -25,10 +25,6 @@ Users should be able to:
 
 https://user-images.githubusercontent.com/67608414/217344769-fae6e9d2-ca46-4457-82cb-a50905f9fda4.mp4
 
-### Links
-
-- Live Site URL: [Live Site URL](https://mosaeed15.github.io/SpaceProject/)
-
 ## My process
 
 Wrote the html code and then styled the website using simple css and then added my charts using chart.js after reading the files in my javascript.
